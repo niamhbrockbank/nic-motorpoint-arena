@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install modules
+      run: npm install
+    - name: Check formatting with Prettier
+      run: npm run format:check
+    - name: Check quality with ESLint
+      run: npm run lint
+    - name: Check tests pass
+      run: npm run test
+    - name: Check app builds
+      run: npm run build
