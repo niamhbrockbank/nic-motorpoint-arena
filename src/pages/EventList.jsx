@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from '@/styles/Home.module.css'
 
 export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -21,12 +22,15 @@ export default function EventList() {
 
   return (
     <>
-      <h1>hi event list</h1>
-      <ul>
+      <div className={styles.description}>
+      <h1>WHAT'S ON</h1>
+      <p>Making space for culture and shared experience.</p>
+      </div>
+      <div className={styles.grid}>
         {events.map((event, i) => (
-          <li key={i}>{event.name}</li>
+          <div key={i} className={styles.card}><span><h2>{event.name}</h2><p>description</p></span></div>
         ))}
-      </ul>
-    </>
+      </div>
+      </>
   );
 }
