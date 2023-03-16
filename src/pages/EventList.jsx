@@ -29,10 +29,11 @@ export default function EventList() {
     sortByDate(event1, event2)
   );
 
+  const title = "WHAT'S ON"
   return (
     <>
       <div className={styles.description}>
-        <h1>WHAT'S ON</h1>
+        <h1>{title}</h1>
         <p>Making space for culture and shared experience.</p>
       </div>
       <div className={styles.grid}>
