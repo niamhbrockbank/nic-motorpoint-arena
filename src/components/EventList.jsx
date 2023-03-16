@@ -44,9 +44,9 @@ export default function EventList() {
   const title = "WHAT'S ON";
   return (
     <>
-      <div className={styles.description}>
+      <div className={styles.hero}>
         <h1>{title}</h1>
-        <p>Making space for culture and shared experience.</p>
+        <p className={styles.description}>Making space for culture and shared experience.</p>
       </div>
       <div className={styles.grid}>
         {sortedEvents.map((event) => (

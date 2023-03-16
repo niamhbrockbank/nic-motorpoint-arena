@@ -7,13 +7,28 @@
   min-height: 100vh;
 }
 
+.hero{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40vh;
+  margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1{
+  font-size: 2.8rem;
+  font-family: var(--font-mono);
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
   font-size: 0.85rem;
   max-width: var(--max-width);
-  width: 100%;
+  width: fit-content;
   z-index: 2;
   font-family: var(--font-mono);
 }
@@ -52,6 +67,10 @@
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+}
+
+.card:hover{
+  cursor: pointer;
 }
 
 .card span {
