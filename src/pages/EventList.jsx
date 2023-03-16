@@ -4,7 +4,17 @@ import Event from "./Event";
 
 export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-  const [events, setEvents] = useState(["No events found"]);
+
+  const loaderEvent = {
+    name: "No event found",
+    dates :
+    [
+      {
+        date : "-"
+      }
+    ]
+  }
+  const [events, setEvents] = useState([loaderEvent]);
 
   useEffect(() => {
     async function fetchEvents() {
