@@ -10,7 +10,7 @@ export default function Event({ event }) {
   return (
     <div className={styles.card}>
       <span onClick={() => window.open(url, "_blank")}>
-        <Image src={image} alt={name} width="220" height="100" />
+        <Image src={image ? image : '/./images/loading.jpeg'} alt={name} width="220" height="100" />
         <h2>{name}</h2>
         <p>{dates.length > 1? `${formattedDates[0]} - ${formattedDates[dates.length - 1]}` : formattedDates[0]}</p>
       </span>
