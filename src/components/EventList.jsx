@@ -10,7 +10,7 @@ export default function EventList() {
     name: "",
     dates: [
       {
-        date: "",
+        date: "2023-04-16",
       },
     ],
     image: "",

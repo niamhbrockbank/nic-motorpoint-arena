@@ -1,13 +1,18 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
+import moment from "moment";
 
 export default function Event({ event }) {
+  const {name, url, image, dates } = event
+
+  const formattedDates = dates.map(d => moment(d.date).format('Do MMM YYYY'))
+
   return (
     <div className={styles.card}>
-      <span onClick={() => window.open(event.url, "_blank")}>
-        <Image src={event.image} alt={event.name} width="220" height="100" />
-        <h2>{event.name}</h2>
-        <p>{event.dates ? event.dates[0].date : "TBC"}</p>
+      <span onClick={() => window.open(url, "_blank")}>
+        <Image src={image} alt={name} width="220" height="100" />
+        <h2>{name}</h2>
+        <p>{dates.length > 1? `${formattedDates[0]} - ${formattedDates[dates.length - 1]}` : formattedDates[0]}</p>
       </span>
     </div>
   );
