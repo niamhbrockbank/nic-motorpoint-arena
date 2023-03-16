@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.css";
-import Event from "./Event";
+// import Event from "./Event";
 
 export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -46,8 +46,8 @@ export default function EventList() {
         <p>Making space for culture and shared experience.</p>
       </div>
       <div className={styles.grid}>
-        {sortedEvents.map((event, i) => (
-          <Event key={i} event={event} />
+        {sortedEvents.map((event) => (
+          <h1 key={event.id}>{event.name}</h1>
         ))}
       </div>
     </>
