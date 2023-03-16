@@ -7,13 +7,12 @@ export default function EventList() {
 
   const loaderEvent = {
     name: "No event found",
-    dates :
-    [
+    dates: [
       {
-        date : "-"
-      }
-    ]
-  }
+        date: "-",
+      },
+    ],
+  };
   const [events, setEvents] = useState([loaderEvent]);
 
   useEffect(() => {
@@ -39,7 +38,7 @@ export default function EventList() {
     sortByDate(event1, event2)
   );
 
-  const title = "WHAT'S ON"
+  const title = "WHAT'S ON";
   return (
     <>
       <div className={styles.description}>
