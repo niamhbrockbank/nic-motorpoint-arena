@@ -13,7 +13,8 @@ export default function EventList() {
         date: "",
       },
     ],
-    imageUrl: "",
+    image: "",
+    url: "http://localhost:3000/",
   };
   const [events, setEvents] = useState([loaderEvent]);
 
