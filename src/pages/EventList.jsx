@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.css";
-import Event from "./Event"
+import Event from "./Event";
 
 export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -13,7 +13,9 @@ export default function EventList() {
           `https://staging.national-ice-centre.com/api/events/read?token=${apiKey}`
         );
         const jsonBody = await response.json();
-        const nextEvents = jsonBody.events.map(event => {return {...event, id : crypto.randomUUID()}})
+        const nextEvents = jsonBody.events.map((event) => {
+          return { ...event, id: crypto.randomUUID() };
+        });
 
         setEvents(nextEvents);
       } catch (error) {
@@ -23,7 +25,9 @@ export default function EventList() {
     fetchEvents();
   }, []);
 
-  const sortedEvents = events.sort((event1 , event2) => sortByDate(event1, event2))
+  const sortedEvents = events.sort((event1, event2) =>
+    sortByDate(event1, event2)
+  );
 
   return (
     <>
@@ -40,15 +44,15 @@ export default function EventList() {
   );
 }
 
-function sortByDate(a, b){
-  const firstDateA = a.dates[0].date
-  const firstDateB = b.dates[0].date
+function sortByDate(a, b) {
+  const firstDateA = a.dates[0].date;
+  const firstDateB = b.dates[0].date;
 
-  if (firstDateA < firstDateB){
-    return -1
-  } else if (firstDateB < firstDateA){
-    return 1
+  if (firstDateA < firstDateB) {
+    return -1;
+  } else if (firstDateB < firstDateA) {
+    return 1;
   }
 
-  return 0
+  return 0;
 }
