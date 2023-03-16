@@ -47,7 +47,7 @@ export default function EventList() {
       </div>
       <div className={styles.grid}>
         {sortedEvents.map((event) => (
-          <Event key={event.id} event={event}/>
+          <Event key={event.id} event={event} />
         ))}
       </div>
     </>
