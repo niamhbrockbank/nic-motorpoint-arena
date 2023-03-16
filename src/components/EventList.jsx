@@ -6,14 +6,14 @@ export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
   const loaderEvent = {
-    id : 0,
+    id: 0,
     name: "",
     dates: [
       {
         date: "",
       },
     ],
-    imageUrl: ""
+    imageUrl: "",
   };
   const [events, setEvents] = useState([loaderEvent]);
 
