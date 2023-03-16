@@ -46,7 +46,9 @@ export default function EventList() {
     <>
       <div className={styles.hero}>
         <h1>{title}</h1>
-        <p className={styles.description}>Making space for culture and shared experience.</p>
+        <p className={styles.description}>
+          Making space for culture and shared experience.
+        </p>
       </div>
       <div className={styles.grid}>
         {sortedEvents.map((event) => (
