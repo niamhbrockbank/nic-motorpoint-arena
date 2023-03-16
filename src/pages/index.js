@@ -10,8 +10,11 @@ export default function Home() {
     <>
       <Head>
         <title>NIC and Motorpoint Arena</title>
-        <link rel="icon" href="/calendar-event.svg"/>
-        <meta name="description" content="What's on at the National Ice Centre and Motorpoint Arena Nottingham." />
+        <link rel="icon" href="/calendar-event.svg" />
+        <meta
+          name="description"
+          content="What's on at the National Ice Centre and Motorpoint Arena Nottingham."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
