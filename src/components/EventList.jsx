@@ -7,12 +7,13 @@ export default function EventList() {
 
   const loaderEvent = {
     id : 0,
-    name: "No event found",
+    name: "",
     dates: [
       {
-        date: "-",
+        date: "",
       },
     ],
+    imageUrl: ""
   };
   const [events, setEvents] = useState([loaderEvent]);
 
