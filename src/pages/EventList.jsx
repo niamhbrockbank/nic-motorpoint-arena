@@ -23,7 +23,7 @@ export default function EventList() {
       }
     }
     fetchEvents();
-  }, []);
+  }, [apiKey]);
 
   const sortedEvents = events.sort((event1, event2) =>
     sortByDate(event1, event2)
