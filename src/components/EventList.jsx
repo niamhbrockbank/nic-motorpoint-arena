@@ -49,7 +49,12 @@ export default function EventList() {
 
   return (
     <>
-      <House className={styles.home} onClick={() => window.open('https://www.motorpointarenanottingham.com/')}/>
+      <House
+        className={styles.home}
+        onClick={() =>
+          window.open("https://www.motorpointarenanottingham.com/")
+        }
+      />
       <div className={styles.hero}>
         <h1 className={styles.scramble}>{scrambledTitle}</h1>
         <p className={styles.description}>
