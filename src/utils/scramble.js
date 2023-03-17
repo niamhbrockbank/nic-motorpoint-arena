@@ -4,12 +4,12 @@
  * @returns {JSX.Element[]} array of span elements
  */
 export default function scramble(str) {
-    const arr = str.split("");
-    const elementArr = arr.map((letter, i) => (
-      <span className={styles.letter} key={i}>
-        {letter}
-      </span>
-    ));
-  
-    return elementArr;
-  }
+  const arr = str.split("");
+  const elementArr = arr.map((letter, i) => (
+    <span className={styles.letter} key={i}>
+      {letter}
+    </span>
+  ));
+
+  return elementArr;
+}

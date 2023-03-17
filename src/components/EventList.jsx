@@ -51,7 +51,8 @@ export default function EventList() {
       <div className={styles.hero}>
         <h1 className={styles.scramble}>{scrambledTitle}</h1>
         <p className={styles.description}>
-        Showcasing the biggest names in music, comedy, entertainment and sport.
+          Showcasing the biggest names in music, comedy, entertainment and
+          sport.
         </p>
       </div>
       <div className={styles.grid}>
@@ -62,5 +63,3 @@ export default function EventList() {
     </>
   );
 }
-
-
