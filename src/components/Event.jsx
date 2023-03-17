@@ -17,12 +17,12 @@ export default function Event({ event }) {
       <span onClick={() => url && window.open(url, "_blank")}>
         <h2>{name}</h2>
         <p>{datesDescription}</p>
-        {url &&
-        <div className={styles.link}>
-          <p>VIEW EVENT</p>
-          <ArrowRight />
-        </div>
-}
+        {url && (
+          <div className={styles.link}>
+            <p>VIEW EVENT</p>
+            <ArrowRight />
+          </div>
+        )}
       </span>
     </div>
   );
