@@ -13,11 +13,11 @@ export default function EventList() {
     name: "",
     dates: [
       {
-        date: "2023-04-16",
+        date: "",
       },
     ],
     image: "",
-    url: "http://localhost:3000/",
+    url: "",
   };
   const [events, setEvents] = useState([loaderEvent]);
 

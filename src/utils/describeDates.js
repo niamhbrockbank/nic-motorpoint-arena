@@ -7,6 +7,11 @@ import moment from "moment";
  */
 export default function describeDates(dateArr) {
   const numOfDates = dateArr.length;
+
+  if (dateArr[0].date === ""){
+    return ""
+  }
+
   const longFormDates = dateArr.map((d) =>
     moment(d.date).format("Do MMMM YYYY")
   );
