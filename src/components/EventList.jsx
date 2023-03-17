@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
 import Event from "./Event";
 import scramble from "@/utils/scramble";
+import sortByEarliest from "@/utils/sortByEarliest";
 
 export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -39,7 +40,7 @@ export default function EventList() {
   }, [apiKey]);
 
   const sortedEvents = events.sort((event1, event2) =>
-    sortByDate(event1, event2)
+    sortByEarliest(event1, event2)
   );
 
   const title = "WHAT'S ON";
@@ -62,15 +63,4 @@ export default function EventList() {
   );
 }
 
-function sortByDate(a, b) {
-  const firstDateA = a.dates[0].date;
-  const firstDateB = b.dates[0].date;
 
-  if (firstDateA < firstDateB) {
-    return -1;
-  } else if (firstDateB < firstDateA) {
-    return 1;
-  }
-
-  return 0;
-}
