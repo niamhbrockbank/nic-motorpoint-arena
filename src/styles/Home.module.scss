@@ -84,19 +84,19 @@
     background: rgba(var(--card-rgb), 0);
     border: 1px solid rgba(var(--card-border-rgb), 0);
     transition: background 200ms, border 200ms;
-  
+
     span {
       display: inline-block;
       transition: transform 200ms;
     }
-  
+
     h2 {
       font-weight: 600;
       font-size: 1.4rem;
       margin-bottom: 0.6rem;
       margin-top: 0.4rem;
     }
-  
+
     p {
       margin: 0;
       opacity: 0.6;
@@ -105,13 +105,13 @@
       max-width: 30ch;
       font-family: var(--font-mono);
     }
-  
+
     img {
       width: calc(100% - var(--side-padding));
       height: 9rem;
       object-fit: contain;
     }
-  
+
     .link {
       margin-top: 1rem;
       display: flex;
