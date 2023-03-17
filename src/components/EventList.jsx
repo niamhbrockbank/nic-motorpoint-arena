@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import Event from "./Event";
 
 export default function EventList() {
