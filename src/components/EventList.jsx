@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
 import Event from "./Event";
+import scramble from "@/utils/scramble";
 
 export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -72,20 +73,4 @@ function sortByDate(a, b) {
   }
 
   return 0;
-}
-
-/**
- * Converts a string into a series of span elements each with the classname styles.letter
- * @param {string} str
- * @returns {JSX.Element[]} array of span elements
- */
-function scramble(str) {
-  const arr = str.split("");
-  const elementArr = arr.map((letter, i) => (
-    <span className={styles.letter} key={i}>
-      {letter}
-    </span>
-  ));
-
-  return elementArr;
 }
