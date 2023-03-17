@@ -1,3 +1,5 @@
+import styles from "../styles/Home.module.scss";
+
 /**
  * Converts a string into a series of span elements each with the classname styles.letter
  * @param {string} str
