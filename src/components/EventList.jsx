@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.scss";
 import Event from "./Event";
 import scramble from "@/utils/scramble";
 import sortByEarliest from "@/utils/sortByEarliest";
+import { House } from "react-bootstrap-icons";
 
 export default function EventList() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -48,6 +49,12 @@ export default function EventList() {
 
   return (
     <>
+      <House
+        className={styles.home}
+        onClick={() =>
+          window.open("https://www.motorpointarenanottingham.com/")
+        }
+      />
       <div className={styles.hero}>
         <h1 className={styles.scramble}>{scrambledTitle}</h1>
         <p className={styles.description}>
