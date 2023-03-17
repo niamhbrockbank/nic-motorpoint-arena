@@ -7,6 +7,11 @@
   min-height: 100vh;
 }
 
+.home{
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -121,6 +126,10 @@
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
+  .home:hover{
+    cursor: pointer;
+  }
+
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
