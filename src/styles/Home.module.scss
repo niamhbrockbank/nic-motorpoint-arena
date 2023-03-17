@@ -15,11 +15,27 @@
   margin-bottom: 16px;
   align-items: center;
   justify-content: center;
+
+  h1 {
+    font-size: 2.8rem;
+    font-family: var(--font-mono);
+  }
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-family: var(--font-mono);
+.scramble {
+  transition: opacity 0.2s ease-in-out;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .letter {
+    display: inline-block;
+    padding: 0.6rem;
+    transition: transform 0.2s ease-in-out;
+    transform: translate(calc(var(--x, 0) * 1%), calc(var(--y, 0) * 1%))
+      rotate(calc(var(--r, 0) * 1deg)) scale(var(--s, 1));
+  }
 }
 
 .description {
@@ -31,22 +47,22 @@
   width: fit-content;
   z-index: 2;
   font-family: var(--font-mono);
-}
 
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
+  p {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+    border-radius: var(--border-radius);
+  }
 }
 
 .grid {
@@ -74,6 +90,7 @@
     font-weight: 600;
     font-size: 1.4rem;
     margin-bottom: 0.6rem;
+    margin-top: 0.4rem;
   }
 
   p {
@@ -114,10 +131,33 @@
     text-decoration: underline;
     cursor: pointer;
   }
+
+  .scramble:hover {
+    .letter:hover {
+      &::before {
+        animation: wobble 0.3s infinite;
+      }
+    }
+
+    @for $i from 1 through 9 {
+      .letter:nth-child(#{$i}) {
+        --x: #{random(50) - 25};
+        --y: #{random(50) - 25};
+        --r: #{random(50) - 25};
+        &:hover {
+          z-index: 2;
+        }
+      }
+    }
+  }
 }
 
 @media (prefers-reduced-motion) {
   .card:hover {
+    transform: none;
+  }
+
+  .scramble:hover {
     transform: none;
   }
 }
@@ -126,6 +166,10 @@
 @media (max-width: 700px) {
   .content {
     padding: 4rem;
+  }
+
+  .scramble {
+    width: 80vw;
   }
 
   .grid {
@@ -137,55 +181,60 @@
 
   .card {
     padding: 1rem 2.5rem;
-  }
 
-  .card h2 {
-    margin-bottom: 0.5rem;
+    h2 {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .description {
     font-size: 0.8rem;
+
+    a {
+      padding: 1rem;
+    }
+
+    p,
+    div {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      width: 100%;
+    }
+
+    p {
+      align-items: center;
+      inset: 0 0 auto;
+      padding: 2rem 1rem 1.4rem;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
+      background: linear-gradient(
+        to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5)
+      );
+      background-clip: padding-box;
+    }
+
+    div {
+      align-items: flex-end;
+      pointer-events: none;
+      inset: auto 0 0;
+      padding: 2rem;
+      height: 200px;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(var(--background-end-rgb)) 40%
+      );
+      z-index: 1;
+    }
   }
 
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-  }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
+  .link{
+    width: fit-content;
+    margin: auto;
   }
 }
 

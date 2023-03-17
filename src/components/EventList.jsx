@@ -42,10 +42,12 @@ export default function EventList() {
   );
 
   const title = "WHAT'S ON";
+  const scrambledTitle = scramble(title);
+
   return (
     <>
       <div className={styles.hero}>
-        <h1>{title}</h1>
+        <h1 className={styles.scramble}>{scrambledTitle}</h1>
         <p className={styles.description}>
           Making space for culture and shared experience.
         </p>
@@ -70,4 +72,20 @@ function sortByDate(a, b) {
   }
 
   return 0;
+}
+
+/**
+ * Converts a string into a series of span elements each with the classname styles.letter
+ * @param {string} str
+ * @returns {JSX.Element[]} array of span elements
+ */
+function scramble(str) {
+  const arr = str.split("");
+  const elementArr = arr.map((letter, i) => (
+    <span className={styles.letter} key={i}>
+      {letter}
+    </span>
+  ));
+
+  return elementArr;
 }
