@@ -49,7 +49,7 @@ export default function EventList() {
       <div className={styles.hero}>
         <h1 className={styles.scramble}>{scrambledTitle}</h1>
         <p className={styles.description}>
-          Making space for culture and shared experience.
+        Showcasing the biggest names in music, comedy, entertainment and sport.
         </p>
       </div>
       <div className={styles.grid}>
