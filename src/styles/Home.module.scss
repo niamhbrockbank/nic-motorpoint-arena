@@ -49,20 +49,17 @@
   border-radius: var(--border-radius);
 }
 
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
   width: var(--max-width);
   max-width: 100%;
+  gap: 1rem;
 }
 
 .card {
-  padding: 1rem 1.2rem;
+  --side-padding: 1rem;
+  padding: var(--side-padding) 1.2rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
@@ -75,7 +72,8 @@
 
   h2 {
     font-weight: 600;
-    margin-bottom: 0.7rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
   }
 
   p {
@@ -84,11 +82,24 @@
     font-size: 0.9rem;
     line-height: 1.5;
     max-width: 30ch;
+    font-family: var(--font-mono);
   }
-}
 
-.card:hover {
-  cursor: pointer;
+  img {
+    width: calc(100% - var(--side-padding));
+    height: 9rem;
+    object-fit: contain;
+  }
+
+  .link {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+  }
 }
 
 /* Enable hover only on non-touch devices */
@@ -96,15 +107,17 @@
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    transform: translateX(4px);
   }
 
-  .card:hover span {
-    transform: translateX(4px);
+  .link:hover{
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
 
 @media (prefers-reduced-motion) {
-  .card:hover span {
+  .card:hover {
     transform: none;
   }
 }
